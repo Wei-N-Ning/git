@@ -759,6 +759,9 @@ int cmd_show(int argc, const char **argv, const char *prefix)
 		switch (o->type) {
 		case OBJ_BLOB:
 			ret = show_blob_object(&o->oid, &rev, name);
+			if (i < rev.pending.nr - 1) {
+				printf("!@#$GiT.sHoW.sEpArAtOr$#@!\n");
+			}
 			break;
 		case OBJ_TAG: {
 			struct tag *t = (struct tag *)o;
